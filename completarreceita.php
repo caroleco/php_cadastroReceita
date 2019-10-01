@@ -39,10 +39,10 @@ include_once 'conexao.php';
         if(!$result = $db->query($sql)){
             die("Erro {$db->error}");
         }else{
-            while($row = $result->fetch_object('Ingrediente')){
+            while($row = $result->fetch_object()){
     ?>
-    <input type="checkbox" name="check_list[]" value="<?= $row->getNome() ?>"><?= $row->getNome() ?>
-                <input type="number" name="<?= $row->getNome() ?>">
+    <input type="checkbox" name="check_list[]" value="<?= $row->nome ?>"><?= $row->nome ?>
+                <input type="number" name="<?= $row->nome ?>">
     <?php
                 }
     }
